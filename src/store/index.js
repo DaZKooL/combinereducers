@@ -6,13 +6,13 @@ const initialCounterState = {
 }
 
 const initialGreetingsState = {
-    message : "Hello"
+    message: "Hello"
 }
 
 
 const counterReducer = (state = initialCounterState, action) => {
     if (action.type === 'increment') {
-        console.log (state, action);
+        console.log(state, action);
         return {
             count: state.count + action.amount,
         }
@@ -22,7 +22,7 @@ const counterReducer = (state = initialCounterState, action) => {
 
 const greetingsReducer = (state = initialGreetingsState, action) => {
     if (action.type === 'greets') {
-        console.log (state, action);
+        console.log(state, action);
         return {
             message: 'Goodbye'
         }
@@ -30,11 +30,8 @@ const greetingsReducer = (state = initialGreetingsState, action) => {
     return state;
 }
 
-const rootReducer = combineReducers({  
-    count:counterReducer,
-    essage:greetingsReducer  
-})  
+const rootReducer = combineReducers({ counter: counterReducer, messager: greetingsReducer })
 
-const store = createStore(rootReducer)  ; 
+const store = createStore(rootReducer);
 
 export default store;
