@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux'
-import counter from './counter';
-import messager from './messager';
+import { combineReducers } from "redux";
+import counterReducer from "./counter";
+import messagerReducer from "./messager";
 
 export default combineReducers({
-  counter,
-  messager
-})
+  counter: counterReducer,
+  messager: messagerReducer,
+});
