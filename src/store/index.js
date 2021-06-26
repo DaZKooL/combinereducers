@@ -1,37 +1,10 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore } from 'redux';
+import reducer from './reducers/index'
+//import counter from './reducers/counter' // this alone works
+//import messager from './reducers/messager' // this alone  works
 
-
-const initialCounterState = {
-    count: 0,
-}
-
-const initialGreetingsState = {
-    message: "Hello"
-}
-
-
-const counterReducer = (state = initialCounterState, action) => {
-    if (action.type === 'increment') {
-        console.log(state, action);
-        return {
-            count: state.count + action.amount,
-        }
-    }
-    return state;
-}
-
-const greetingsReducer = (state = initialGreetingsState, action) => {
-    if (action.type === 'greets') {
-        console.log(state, action);
-        return {
-            message: 'Goodbye'
-        }
-    }
-    return state;
-}
-
-const rootReducer = combineReducers({ counter: counterReducer, messager: greetingsReducer })
-
-const store = createStore(rootReducer);
+//const store = createStore(counter);
+//const store = createStore(messager);
+const store = createStore(reducer);
 
 export default store;
