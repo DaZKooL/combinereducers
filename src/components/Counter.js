@@ -6,11 +6,11 @@ const Counter = () => {
   const message = useSelector(state => state.message);
 
   const incrementHandler = () => {
-    dispatch({ type: 'increment', amount: 3 })
+    dispatch({ type: 'INCREMENT', amount: 3 })
   }
 
   const greetingsHandler = () => {
-    dispatch({ type: 'greets', message: 'Goodbye' })
+    dispatch({ type: 'GREETS', message: 'Goodbye' })
   }
 
   return (
