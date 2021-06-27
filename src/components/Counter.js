@@ -1,12 +1,12 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Counter = () => {
   const dispatch = useDispatch();
-  const count = useSelector(state => state.count);
-  const message = useSelector(state => state.message);
+  const {count} = useSelector(state => state.counter);
+  const {message} = useSelector(state => state.messager);
 
   const incrementHandler = () => {
-    dispatch({ type: 'INCREMENT', amount: 3 })
+    dispatch({ type: 'INCREMENT', amount: 1 })
   }
 
   const greetingsHandler = () => {

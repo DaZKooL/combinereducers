@@ -2,16 +2,15 @@ const initialState = {
     message: 'Hi',
 }
 
-export default function counter(state = initialState, action) {
+export default function messagerReducer(state = initialState, action) {
+  switch (action.type) {
+    case "GREETS":
+      console.log(state, action);
 
-    switch (action.type) {
-        case 'GREETS':
-            console.log(state, action);
-
-            return {
-                message: 'Goodbye'
-            }
-        default:
-            return state
-    }
+      return {
+        message: "Goodbye",
+      };
+    default:
+      return state;
+  }
 }
