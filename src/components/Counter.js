@@ -1,23 +1,20 @@
 import { useDispatch, useSelector } from 'react-redux';
-
+import { counterActions } from '../store/index';
+ 
 const Counter = () => {
   const dispatch = useDispatch();
-  const {count} = useSelector(state => state.counter);
-  const {message} = useSelector(state => state.messager);
+  const counter = useSelector(state => state.counter);
+  //const {message} = useSelector(state => state.messager);
 
   const incrementHandler = () => {
-    dispatch({ type: 'INCREMENT', amount: 1 })
+    dispatch(counterActions.increment())
   }
 
-  const greetingsHandler = () => {
-    dispatch({ type: 'GREETS', message: 'Goodbye' })
-  }
 
   return (
     <div>
-     - {count} - { message }
+     - {counter}
       <button onClick={incrementHandler}>Increment</button>
-      <button onClick={greetingsHandler}>Greet!</button>
 
     </div>
   );
